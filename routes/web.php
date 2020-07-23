@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('put', function() {
+    Storage::cloud()->put('test.txt', 'Hello World');
+    return 'File was saved to Google Drive';
+});
+
 
 Route::get('/download', 'TaiveController@getDanhsachCongkhai');
 Route::get('/tracking', 'TrackingController@getSearch')->name('guest.tracking.index.get');
@@ -21,6 +26,7 @@ Route::get('/customer/{client_id}', 'TrackingController@getByClient')->name('gue
 
 Route::get('/login','LoginController@getLogin')->name('guest.login.get');
 Route::post('/login','LoginController@postLogin')->name('guest.login.post');
+
 Route::group(['prefix' => '','middleware' => 'staff'], function() 
 {
     Route::get('/','DashboardController@getView')->name('staff.dashboard.view.get');

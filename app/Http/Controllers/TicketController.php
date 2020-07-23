@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
+use App\Models\Staff;
 
 use Core\Services\TicketServiceContract;
 use Core\Services\TicketRelatedService;
@@ -54,6 +55,7 @@ class TicketController extends Controller
         $data['ticket_old'] = $this->relatedService->client->find($client_id)->tickets->first();
         $data['client'] = $this->relatedService->client->find($client_id);
         $data['services'] = $this->relatedService->service->all();
+        $data['staffs'] = staff::all();
         return view('ticket-add', $data);
     }
     
