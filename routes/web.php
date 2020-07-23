@@ -12,10 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('put', function() {
-    Storage::cloud()->put('test.txt', 'Hello World');
-    return 'File was saved to Google Drive';
-});
 
 
 Route::get('/download', 'TaiveController@getDanhsachCongkhai');
