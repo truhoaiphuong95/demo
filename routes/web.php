@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('test', function(){
+    return view('statistic-finance-year.blade');
+});
+
 
 Route::get('/download', 'TaiveController@getDanhsachCongkhai');
 Route::get('/tracking', 'TrackingController@getSearch')->name('guest.tracking.index.get');
