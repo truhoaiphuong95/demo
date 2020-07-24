@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('test', function(){
-    return view('picture-add');
-});
+Route::get('picture-add', 'PictureController@getAdd');
 
 
 Route::get('/download', 'TaiveController@getDanhsachCongkhai');

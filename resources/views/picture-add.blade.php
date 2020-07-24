@@ -33,7 +33,7 @@
 
   <!-- Main content -->
   <section class="content">
-    HÌNH ẢNH
+    
     <!-- /.row -->
   </section>
   <!-- /.content -->
