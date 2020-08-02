@@ -60,6 +60,7 @@
                       @endforeach
                     </select>
                   </div>
+                  Hello
                   <div class="col-md-12">
                     <label>Nội dung công việc</label>
                     <textarea id="editor1" name="content" style="width: 100%" placeholder="Nội dung công việc chi tiết">{{$worklog -> content}}</textarea>
