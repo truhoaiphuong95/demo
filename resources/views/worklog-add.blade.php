@@ -27,23 +27,26 @@
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
-      @if (count($errors) > 0)
-      @foreach ($errors->all() as $error)
-      <div class="alert alert-danger alert-dismissible">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-        <h4><i class="icon fa fa-ban"></i> Thất bại!</h4> {!! $error !!}
+      <div class="row">
+        <div class="col">
+          Nội quy và trình tự báo cáo:
+        </div>
       </div>
-      @endforeach
-      @endif
+    </div>
+    <div class="container-fluid">
+        @if (count($errors) > 0)
+          @foreach ($errors->all() as $error)
+          <div class="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h4><i class="icon fa fa-ban"></i> Thất bại!</h4> {!! $error !!}
+          </div>
+          @endforeach
+        @endif
       <form action="{{route('staff.worklog.add.post')}}" method="post">
         {{csrf_field()}}
         <input type="hidden" name="staff_id" value="{{UserInfo()->id}}" />
         <div class="row">
-          <div class="col">
-            Nội quy và trình tự báo cáo
-          </div>
-        </div>
-        <div class="row">
+          <div class="col-md-3"></div>
           <div class="col-md-6">
             <div class="card card-primary">
               <div class="card-body">
@@ -83,6 +86,7 @@
               </div>
             </div>
           </div>
+          <div class="col-md-3"></div>
         </div>
       </form>
     </div>
