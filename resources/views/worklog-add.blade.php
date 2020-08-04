@@ -29,7 +29,6 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col">
-          Nội quy và trình tự báo cáo:
         </div>
       </div>
     </div>
@@ -45,8 +44,8 @@
       <form action="{{route('staff.worklog.add.post')}}" method="post">
         {{csrf_field()}}
         <input type="hidden" name="staff_id" value="{{UserInfo()->id}}" />
-        <div class="row offset-md-3">
-          <div class="col-md-6">
+        <div class="row">
+          <div class="col">
             <div class="card card-primary">
               <div class="card-body">
                 <div class="col-md-12">
@@ -81,6 +80,7 @@
                 </div>
               </div>
               <div class="card-footer">
+                <a onclick="history.go(-1);" class="btn">Quay lại</a>
                 <button type="submit" class="btn btn-primary pull-right">Gửi báo cáo</button>
               </div>
             </div>
