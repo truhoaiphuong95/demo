@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>DELI | Thêm biên nhận</title>
+<title>DELI | Biên nhận thiết kế</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/select2/select2.min.css')}}">
 @stop
 @section('main')
@@ -11,7 +11,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>BIÊN NHẬN</h1>
+          <h1>BIÊN NHẬN THIẾT KẾ</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">

@@ -13,9 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('picture-add', 'PictureController@getAdd');
-
-
 Route::get('/download', 'TaiveController@getDanhsachCongkhai');
 Route::get('/tracking', 'TrackingController@getSearch')->name('guest.tracking.index.get');
 Route::post('/search', 'TrackingController@postSearch');
