@@ -32,7 +32,7 @@
       </div>
     @endforeach
     @endif 
-      <div class="row">
+      <div class="row offset-md-1">
         <div class="col-6">
           <div class="card card-primary">
             <div class="card-header">
