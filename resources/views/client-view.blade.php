@@ -74,21 +74,21 @@
                   <b>NGÀNH NGHỀ KINH DOANH:</b> @if ($client->major!="") <a class="float-right">{{$client->major}}</a> @else <a class="float-right">Không có</a> @endif
                 </li>
               </ul>
-              @if(UserInfo()->level >= 5)
+              @if(UserInfo()->isManager())
               <a href="{{route('staff.payment.add.get', ['client_id'=>$client->id])}}" class="btn btn-block btn-default" id="btnThemphieuchi">
               <i class="fa fa-arrow-right"></i> Thêm phiếu chi (F6)
               </a>
               <a href="{{route('staff.receipt.add.get', ['client_id'=>$client->id])}}" class="btn btn-block btn-default" id="btnThemphieuthu">
               <i class="fa fa-arrow-left"></i> Thêm phiếu thu (F7)
               </a>
-              @endif
-              <a href="{{route('staff.ticket.add.get', ['client_id'=>$client->id])}}" class="btn btn-block btn-default" id="btnThembiennhan">
-              <i class="fa fa-book"></i> BIÊN NHẬN THIẾT KẾ (F8)
-              </a>
               <a href="{{route('staff.coursestudent.add.get', ['client_id'=>$client->id])}}" class="btn btn-block btn-default" id="btnThemvaolop">
               <i class="fa fa-university"></i> THÊM VÀO DỰ ÁN (F9)
               </a>
               <a href="{{route('staff.client.edit.get', ['client_id'=>$client->id])}}" class="btn btn-info btn-block"><b>Sửa thông tin</b></a>
+              @endif
+              <a href="{{route('staff.ticket.add.get', ['client_id'=>$client->id])}}" class="btn btn-block btn-default" id="btnThembiennhan">
+                <i class="fa fa-book"></i> BIÊN NHẬN THIẾT KẾ
+              </a>
             </div>
             <!-- /.card-body -->
           </div>
@@ -131,6 +131,9 @@
             <!-- /.card-body -->
           </div>
           <!-- /.card -->
+
+          <!-- DANH SÁCH DỰ ÁN -->
+          @if(UserInfo()->isManager())
           <div class="card card card-info">
             <div class="card-header">
               <h3 class="card-title">DANH SÁCH DỰ ÁN THIẾT KẾ</h3>
@@ -167,7 +170,8 @@
             </div>
             <!-- /.card-body -->
           </div>
-          <!-- /.card -->
+          @endif
+          <!-- DANH SÁCH DỰ ÁN -->
         </div>
       </div>
     </div>

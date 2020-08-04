@@ -206,6 +206,9 @@
               @endif
             </ul>
           </li>
+
+          <!-- Dự án -->
+          @if(UserInfo()->isManager())
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-university"></i>
@@ -221,16 +224,17 @@
                   <p>Danh sách dự án</p>
                 </a>
               </li>
-              @if(UserInfo()->isManager())
               <li class="nav-item">
                 <a href="{{route('staff.course.add.get')}}" class="nav-link">
                   <i class="fa fa-plus nav-icon"></i>
                   <p>Thêm dự án</p>
                 </a>
               </li>
-              @endif
             </ul>
           </li>
+          @endif
+          <!-- Dự án -->
+          
           @if(UserInfo()->isManager())
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link ">
