@@ -80,7 +80,7 @@
                 </div>
               </div>
               <div class="card-footer">
-                <a onclick="history.go(-1);" class="btn">Quay lại</a>
+                <a onclick="history.go(-1);" class="btn btn-light pull-right">Quay lại</a>
                 <button type="submit" class="btn btn-primary pull-right">Gửi báo cáo</button>
               </div>
             </div>
