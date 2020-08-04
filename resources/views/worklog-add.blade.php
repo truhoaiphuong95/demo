@@ -45,7 +45,7 @@
       <form action="{{route('staff.worklog.add.post')}}" method="post">
         {{csrf_field()}}
         <input type="hidden" name="staff_id" value="{{UserInfo()->id}}" />
-        <div class="row">
+        <div class="row offset-md-2">
           <div class="col-md-3"></div>
           <div class="col-md-6">
             <div class="card card-primary">
