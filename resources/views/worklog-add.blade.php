@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('head')
-<title>DELI | Làm báo cáo</title>
+<title>DELI | Báo cáo</title>
 <link rel="stylesheet" href="{{ secure_asset('plugins/select2/select2.min.css') }}">
 @stop
 
@@ -18,7 +18,7 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-            <li class="breadcrumb-item active">Làm báo cáo</li>
+            <li class="breadcrumb-item active">Báo cáo</li>
           </ol>
         </div>
       </div>
@@ -39,7 +39,12 @@
         {{csrf_field()}}
         <input type="hidden" name="staff_id" value="{{UserInfo()->id}}" />
         <div class="row">
-          <div class="col-md-12">
+          <div class="col">
+            Nội quy và trình tự báo cáo
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
             <div class="card card-primary">
               <div class="card-body">
                 <div class="col-md-12">
@@ -54,16 +59,16 @@
                     <!-- /.input group -->
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Chọn ca làm việc</label>
+                    <label>Chọn buổi làm việc:</label>
                     <select name="session" class="form-control select2" style="width: 100%;" required>
-                      <option disabled selected value> -- Chọn một -- </option>
-                      <option value="morning">Ca sáng</option>
-                      <option value="afternoon">Ca chiều</option>
-                      <option value="everning">Ca tối</option>
+                      <option disabled selected value> -- Chọn buổi làm việc -- </option>
+                      <option value="morning">Buổi sáng</option>
+                      <option value="afternoon">Buổi chiều</option>
+                      <option value="everning">Buổi tối</option>
                     </select>
                   </div>
                   <div class="col-md-12">
-                    <label>Nội dung công việc</label>
+                    <label>Viết mô tả nội dung và tiến độ công việc:</label>
                     <textarea id="editor1" name="content" style="width: 100%" placeholder="Nội dung công việc chi tiết"></textarea>
                   </div>
                   <!-- /.col-->
