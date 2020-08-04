@@ -32,8 +32,8 @@
       </div>
     @endforeach
     @endif 
-      <div class="row offset-md-1">
-        <div class="col-6">
+      <div class="row offset-md">
+        <div class="col">
           <div class="card card-primary">
             <div class="card-header">
               <h3 class="card-title">NHẬP THÔNG TIN KHÁCH HÀNG</h3>
