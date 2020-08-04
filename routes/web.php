@@ -19,9 +19,12 @@ Route::post('/search', 'TrackingController@postSearch');
 Route::get('/tracking/{ticket_id}/{sixdigit}', 'TrackingController@getByTicket')->name('guest.tracking.ticket.get');
 Route::get('/customer/{client_id}', 'TrackingController@getByClient')->name('guest.tracking.client.get');
 
+// Đăng nhập
 Route::get('/login','LoginController@getLogin')->name('guest.login.get');
 Route::post('/login','LoginController@postLogin')->name('guest.login.post');
 
+
+// Xử lý hệ thống
 Route::group(['prefix' => '','middleware' => 'staff'], function() 
 {
     Route::get('/','DashboardController@getView')->name('staff.dashboard.view.get');
@@ -29,6 +32,7 @@ Route::group(['prefix' => '','middleware' => 'staff'], function()
     {
         return 'Loged in successed!';
     });
+    
     Route::get('/afterlogin','LoginController@getAfterLogin')->name('staff.afterlogin.get');
     Route::get('/logout','LoginController@getLogout')->name('staff.logout.get');
     
@@ -36,7 +40,7 @@ Route::group(['prefix' => '','middleware' => 'staff'], function()
 
     Route::group(['prefix' => 'techking'], function() 
     {
-        Route::get('/dashboard', 'TechKing\DashboardController@getIndex')->name('staff.techking.dashboard.get');
+        Route::get('/dashboard', 'DELI\DashboardController@getIndex')->name('staff.techking.dashboard.get');
     });
     
     Route::group(['prefix' => 'clients'], function() 
@@ -49,9 +53,10 @@ Route::group(['prefix' => '','middleware' => 'staff'], function()
         Route::post('/add', 'ClientController@postAdd')->name('staff.client.add.post');
         Route::get('/edit/{client_id}', 'ClientController@getEdit')->name('staff.client.edit.get');
         Route::post('/edit/{client_id}', 'ClientController@postEdit')->name('staff.client.edit.post');
-        Route::get('/export', 'ClientController@getExport')->name('staff.client.export.get');
-        Route::get('/export/edu', 'ClientController@getExportEdu')->name('staff.client.exportedu.get');
-        Route::get('/export/tech', 'ClientController@getExportTech')->name('staff.client.exporttech.get');
+        // Không sử dụng được
+        //Route::get('/export', 'ClientController@getExport')->name('staff.client.export.get');
+        //Route::get('/export/edu', 'ClientController@getExportEdu')->name('staff.client.exportedu.get');
+        //Route::get('/export/tech', 'ClientController@getExportTech')->name('staff.client.exporttech.get');
     });
 
     Route::group(['prefix' => 'financial'], function() 

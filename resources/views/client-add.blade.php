@@ -32,54 +32,56 @@
       </div>
     @endforeach
     @endif 
-      <!-- general form elements -->
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">NHẬP THÔNG TIN KHÁCH HÀNG</h3>
-              </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <form role="form" action="{{route('staff.client.add.post')}}" method="post">
-                {{csrf_field()}}
-                <div class="card-body">
-                  <div class="form-group">
-                    <label for="inputSdt">Số điện thoại *:</label>
-                    <input name="phone" type="number" class="form-control" id="phone" @if(isset($phone)) value="{{$phone}}" readonly="readonly" @endif>
-                  </div>
-                  <div class="form-group">
-                    <label for="name">Tên khách hàng *:</label>
-                    <input name="name" type="text" class="form-control" id="name" placeholder="Nhập vào tên khách hàng" autofocus required>
-                  </div>
-                  <div class="form-group">
-                    <label for="birthday">Ngày sinh:</label>
-                    <input name="birthday" type="date" class="form-control" id="birthday">
-                  </div>
-                  <div class="form-group">
-                    <label for="fburl">Facebook:</label>
-                    <input name="fburl" type="text" class="form-control" id="fburl" placeholder="Địa chỉ trang cá nhân">
-                  </div>
-                  <div class="form-group">
-                    <label for="zalo">Zalo:</label>
-                    <input name="zalo" type="number" class="form-control" id="zalo" placeholder="Số điện thoại Zalo" @if(isset($phone)) value="{{$phone}}" @endif>
-                  </div>
-                  <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input name="email" type="text" class="form-control" id="email" placeholder="Địa chỉ thư điện tử" >
-                  </div>
-                  <div class="form-group">
-                    <label for="major">Ngành nghề kinh doanh:</label>
-                    <input name="major" type="text" class="form-control" id="major" placeholder="Ngành học/trường học" >
-                  </div>
-                </div>
-                <!-- /.card-body -->
-
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Thêm Khách hàng</button>
-                  <a onclick="history.go(-1);" class="btn">Quay lại</a>
-                </div>
-              </form>
+      <div class="row">
+        <div class="col-6">
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">NHẬP THÔNG TIN KHÁCH HÀNG</h3>
             </div>
-            <!-- /.card -->
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form role="form" action="{{route('staff.client.add.post')}}" method="post">
+              {{csrf_field()}}
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="inputSdt">Số điện thoại *:</label>
+                  <input name="phone" type="number" class="form-control" id="phone" @if(isset($phone)) value="{{$phone}}" readonly="readonly" @endif>
+                </div>
+                <div class="form-group">
+                  <label for="name">Tên khách hàng *:</label>
+                  <input name="name" type="text" class="form-control" id="name" placeholder="Nhập vào tên khách hàng" autofocus required>
+                </div>
+                <div class="form-group">
+                  <label for="birthday">Ngày sinh:</label>
+                  <input name="birthday" type="date" class="form-control" id="birthday">
+                </div>
+                <div class="form-group">
+                  <label for="fburl">Facebook:</label>
+                  <input name="fburl" type="text" class="form-control" id="fburl" placeholder="Địa chỉ trang cá nhân">
+                </div>
+                <div class="form-group">
+                  <label for="zalo">Zalo:</label>
+                  <input name="zalo" type="number" class="form-control" id="zalo" placeholder="Số điện thoại Zalo" @if(isset($phone)) value="{{$phone}}" @endif>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input name="email" type="text" class="form-control" id="email" placeholder="Địa chỉ thư điện tử" >
+                </div>
+                <div class="form-group">
+                  <label for="major">Ngành nghề kinh doanh:</label>
+                  <input name="major" type="text" class="form-control" id="major" placeholder="Ngành nghề kinh doanh/ Đơn vị công tác" >
+                </div>
+              </div>
+              <!-- /.card-body -->
+
+              <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Thêm Khách hàng</button>
+                <a onclick="history.go(-1);" class="btn">Quay lại</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
     <!-- /.content -->
   </div>
